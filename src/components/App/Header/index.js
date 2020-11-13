@@ -2,22 +2,18 @@ import React from "react";
 
 import CarImg from "../../../assets/img/car-wireframe.png";
 
-import {
-  Container,
-  Box,
-  Input,
-  Button,
-  BoxSearch,
-  Opacity,
-} from "./styles";
+import { Container, Box, Input, Button, BoxSearch, Opacity } from "./styles";
 
 export const Header = () => {
   return (
     <Container>
       <BoxSearch>
         <Box>
-          <Input placeholder="Pesquise por um veículo" type="text" />
-          <Button to='/add'>Cadastrar</Button>
+          <Input
+            placeholder="Pesquise por um veículo"
+            type="text"
+          />
+          <Button to="/add">Cadastrar</Button>
         </Box>
       </BoxSearch>
       <div>

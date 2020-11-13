@@ -39,17 +39,6 @@ const initialValues = {
 export const Add = () => {
   const { addCar } = useContext(GlobalContext);
 
-  // const [data, setData] = useState({
-  //   id: "",
-  //   title: "",
-  //   model: "",
-  //   brand: "",
-  //   year: "",
-  //   color: "",
-  //   km: "",
-  //   price: "",
-  // });
-
   const history = useHistory();
 
   const onSubmit = (formValue) => {

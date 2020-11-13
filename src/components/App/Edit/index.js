@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import {
   Container,
-  Text,
+  ContainerButton,
   Box,
   BoxForm,
   Fields,
@@ -18,7 +18,7 @@ import {
   ContainerSelect,
 } from "../Add/styles";
 
-import { ContainerButton, BoxButton, Button } from "./styles";
+import { BoxButton, Btn } from "./styles";
 
 export const Edit = (props) => {
   const { cars, removeCar, editCar } = useContext(GlobalContext);
@@ -143,12 +143,9 @@ export const Edit = (props) => {
                     maxWidth: "45%",
                   }}
                 >
-                  <Button
-                    type="button"
-                    onClick={() => removeCar(selectedCar.id)}
-                  >
+                  <Btn type="button" onClick={() => removeCar(selectedCar.id)}>
                     Remover
-                  </Button>
+                  </Btn>
                 </Link>
 
                 <Link
@@ -159,9 +156,9 @@ export const Edit = (props) => {
                     maxWidth: "45%",
                   }}
                 >
-                  <Button type="button" n>
+                  <Btn type="button" n>
                     Cancelar
-                  </Button>
+                  </Btn>
                 </Link>
               </BoxButton>
               <ButtonSave type="submit">Salvar</ButtonSave>
