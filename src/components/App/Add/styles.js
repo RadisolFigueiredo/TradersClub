@@ -12,7 +12,7 @@ export const Box = styled.div`
   display: flex;
   justify-content: center;
   height: 83%;
-  padding-top: 5%;
+  padding-top: 3%;
 `;
 export const BoxForm = styled.div`
   width: 80%;

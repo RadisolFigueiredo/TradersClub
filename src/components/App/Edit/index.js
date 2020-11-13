@@ -6,22 +6,19 @@ import { Link, useHistory } from "react-router-dom";
 
 import {
   Container,
+  Text,
   Box,
   BoxForm,
   Fields,
   Select,
   BoxAlignFields,
   AlignFields,
+  ContainerFields,
   ButtonSave,
-
+  ContainerSelect,
 } from "../Add/styles";
 
-import {
-  ContainerButton,
-  BoxButton,
-  Button,
-
-} from "./styles";
+import { ContainerButton, BoxButton, Button } from "./styles";
 
 export const Edit = (props) => {
   const { cars, removeCar, editCar } = useContext(GlobalContext);
@@ -48,7 +45,7 @@ export const Edit = (props) => {
   console.log(cars);
 
   const onSubmit = (event) => {
-    event.preventDefault ()
+    event.preventDefault();
     editCar(selectedCar);
     history.push("/");
   };
@@ -73,53 +70,69 @@ export const Edit = (props) => {
               onChange={onChange}
             />
             <BoxAlignFields>
-              <AlignFields
-                placeholder="Modelo"
-                type="text"
-                name="model"
-                value={selectedCar.model}
-                onChange={onChange}
-              />
-              <AlignFields
-                placeholder="Ano"
-                type="text"
-                name="year"
-                value={selectedCar.year}
-                onChange={onChange}
-              />
+              <ContainerFields>
+                <AlignFields
+                  placeholder="Modelo"
+                  type="text"
+                  name="model"
+                  value={selectedCar.model}
+                  onChange={onChange}
+                />
+              </ContainerFields>
+              <ContainerFields>
+                <AlignFields
+                  placeholder="Ano"
+                  type="text"
+                  name="year"
+                  value={selectedCar.year}
+                  onChange={onChange}
+                />
+              </ContainerFields>
             </BoxAlignFields>
-            <Select value={selectedCar.brand} onChange={onChange} name="brand">
-              <option>Selecione a marca do carro</option>
-              <option value="VW">VW</option>
-              <option value="Chevrolet">Chevrolet</option>
-              <option value="Fiat">FIAT</option>
-              <option value="Ford">Ford</option>
-              <option value="Nissan">Nissan</option>
-              <option value="Mitsubishi">Mitsubishi</option>
-            </Select>
+            <ContainerSelect>
+              <Select
+                value={selectedCar.brand}
+                onChange={onChange}
+                name="brand"
+              >
+                <option>Selecione a marca do carro</option>
+                <option value="VW">VW</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Fiat">FIAT</option>
+                <option value="Ford">Ford</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+              </Select>
+            </ContainerSelect>
             <BoxAlignFields>
-              <AlignFields
-                placeholder="Cor"
-                type="text"
-                name="color"
-                value={selectedCar.color}
-                onChange={onChange}
-              />
-              <AlignFields
-                placeholder="Preço"
-                type="text"
-                name="price"
-                value={selectedCar.price}
-                onChange={onChange}
-              />
+              <ContainerFields>
+                <AlignFields
+                  placeholder="Cor"
+                  type="text"
+                  name="color"
+                  value={selectedCar.color}
+                  onChange={onChange}
+                />
+              </ContainerFields>
+              <ContainerFields>
+                <AlignFields
+                  placeholder="Preço"
+                  type="text"
+                  name="price"
+                  value={selectedCar.price}
+                  onChange={onChange}
+                />
+              </ContainerFields>
             </BoxAlignFields>
-            <AlignFields
-              placeholder="Km"
-              type="text"
-              name="km"
-              value={selectedCar.km}
-              onChange={onChange}
-            />
+            <ContainerFields>
+              <AlignFields
+                placeholder="Km"
+                type="text"
+                name="km"
+                value={selectedCar.km}
+                onChange={onChange}
+              />
+            </ContainerFields>
             <ContainerButton>
               <BoxButton>
                 <Link
@@ -130,7 +143,10 @@ export const Edit = (props) => {
                     maxWidth: "45%",
                   }}
                 >
-                  <Button type='button' onClick={() => removeCar(selectedCar.id)}>
+                  <Button
+                    type="button"
+                    onClick={() => removeCar(selectedCar.id)}
+                  >
                     Remover
                   </Button>
                 </Link>
@@ -143,7 +159,9 @@ export const Edit = (props) => {
                     maxWidth: "45%",
                   }}
                 >
-                  <Button type='button'n>Cancelar</Button>
+                  <Button type="button" n>
+                    Cancelar
+                  </Button>
                 </Link>
               </BoxButton>
               <ButtonSave type="submit">Salvar</ButtonSave>
